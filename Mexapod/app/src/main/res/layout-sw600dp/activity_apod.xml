@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <ProgressBar
+        android:id="@+id/apod_spinner"
+        style="?android:attr/progressBarStyle"
+        android:indeterminate="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_gravity="center"
+        />
+
+    <android.support.design.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/coord_layout"
+        android:background="@color/background"
+        android:visibility="invisible">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/apod_appbarheight_tablet"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:fitsSystemWindows="true"
+            android:id="@+id/appbar_apod"
+            >
+
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:contentScrim="?attr/colorPrimary"
+                app:layout_scrollFlags="scroll|snap">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/apodimg"
+                    android:scaleType="centerCrop"
+                    app:layout_collapseMode="parallax"
+                    android:contentDescription="@string/apodimg"/>
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_collapseMode="pin" />
+
+            </android.support.design.widget.CollapsingToolbarLayout>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="180dp"
+            android:layout_marginEnd="@dimen/fab_margin"
+            android:layout_gravity="bottom|end"
+            android:visibility="invisible"
+            app:backgroundTint="@color/fab_color_3"
+            app:elevation="@dimen/fab_elevation"
+            app:pressedTranslationZ="@dimen/fab_press_translation_z"
+            android:src="@drawable/ic_event_note_black_18dp"
+            android:contentDescription="@string/apoddate"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/fab_margin"
+            android:layout_marginBottom="@dimen/apod_fabmarginbottom"
+            android:layout_gravity="bottom|end"
+            android:visibility="invisible"
+            app:elevation="@dimen/fab_elevation"
+            app:backgroundTint="@color/fab_color_2"
+            app:pressedTranslationZ="@dimen/fab_press_translation_z"
+            android:src="@drawable/ic_file_download_black_18dp"
+            android:contentDescription="@string/apoddownload"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin"
+            app:elevation="@dimen/fab_elevation"
+            app:backgroundTint="@color/fab_color_1"
+            app:pressedTranslationZ="@dimen/fab_press_translation_z"
+            android:src="@drawable/ic_add_black_18dp"
+            />
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:layout_gravity="fill_vertical"
+            android:fitsSystemWindows="true"
+            android:id="@+id/nested_apod"
+            >
+
+            <RelativeLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/masterview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/title_tv"
+                    android:textColor="@color/white"
+                    android:background="@color/colorPrimaryDark"
+                    android:textSize="@dimen/apod_titlesize_tv"
+                    android:gravity="center_vertical"
+                    android:minHeight="@dimen/apod_titleminheight_tv"
+                    android:paddingStart="@dimen/apod_padding_tv"
+                    android:paddingEnd="@dimen/apod_padding_tv"
+                    android:freezesText="true"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/copyright_tv"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/apod_cpyexpsize_tv"
+                    android:background="@color/colorPrimary"
+                    android:minHeight="@dimen/apod_cpyminheight_tv"
+                    android:layout_below="@id/title_tv"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/apod_padding_tv"
+                    android:paddingEnd="@dimen/apod_padding_tv"
+                    tools:text="Copyright"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/expl_tv"
+                    android:layout_below="@id/copyright_tv"
+                    android:paddingStart="@dimen/apod_padding_tv"
+                    android:paddingEnd="@dimen/apod_padding_tv"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/apod_cpyexpsize_tv"
+                    tools:text="Explanation"
+                    android:layout_marginTop="@dimen/apod_expmargintop_tv"/>
+
+            </RelativeLayout>
+
+
+        </android.support.v4.widget.NestedScrollView>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/gradient_imgv"
+            android:background="@color/black"
+            android:alpha="0.7"
+            android:visibility="invisible"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:textColor="@color/white"
+            android:textSize="@dimen/apod_invtvsize"
+            android:layout_marginEnd="@dimen/apod_invtvmarginend"
+            android:layout_marginBottom="@dimen/apod_invtv1marginbottom"
+            android:id="@+id/downltext_tv"
+            android:gravity="start"
+            android:visibility="invisible"
+            android:text="@string/inv1_tv"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:textColor="@color/white"
+            android:textSize="@dimen/apod_invtvsize"
+            android:layout_marginEnd="@dimen/apod_invtvmarginend"
+            android:layout_marginBottom="@dimen/apod_invtv2marginbottom"
+            android:id="@+id/datetext_tv"
+            android:gravity="start"
+            android:visibility="invisible"
+            android:text="@string/inv2_tv"
+            />
+
+
+    </android.support.design.widget.CoordinatorLayout>
+
+
+
+</FrameLayout>

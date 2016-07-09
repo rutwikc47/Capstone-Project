@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">MEXAPOD</string>
+
+    <string name="API_KEY">APIKEY</string>
+
+    <string name="widget_text">NO IMAGES</string>
+    <string name="explanation_text">Explanation: </string>
+
+    <string name="action_curiosity">Curiosity</string>
+    <string name="action_opportunity">Opportunity</string>
+    <string name="action_rover">Rover</string>
+
+    <string name="main_apodtv">APOD</string>
+    <string name="main_mextv">MARS ROVER</string>
+
+    <string name="no_internet">Sorry No Internet Connection!</string>
+    <string name="fetch_apod">Fetching APOD</string>
+    <string name="fetch_apodimg">Downloading Image</string>
+    <string name="fetch_apodimgsaved">Image saved in /Mexapod</string>
+    <string name="explanation_tv">Explanation:- </string>
+
+    <string name="inv1_tv">Download Image</string>
+    <string name="inv2_tv">Select Date</string>
+
+    <string name="apodbt">APOD</string>
+    <string name="mexbt">Mars Rover</string>
+    <string name="apodimg">APOD Image</string>
+    <string name="apoddate">Select Date</string>
+    <string name="apoddownload">Download APOD</string>
+    <string name="mexphotos">Rover Photos</string>
+
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>
+
+    <string-array name="rovers">
+        <item>Curiosity</item>
+        <item>Opportunity</item>
+    </string-array>
+</resources>

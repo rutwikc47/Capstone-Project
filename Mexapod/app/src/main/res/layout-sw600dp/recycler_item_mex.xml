@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?selectableItemBackground"
+    app:cardElevation="@dimen/card_rest"
+    app:cardMaxElevation="@dimen/card_raised"
+    android:id="@+id/cardview_mex">
+
+    <RelativeLayout
+        android:layout_width="match_parent" android:layout_height="@dimen/mexrecycler_itemheight_tablet"
+        android:background="@color/background">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/meximage"
+            android:scaleType="fitXY"
+            android:contentDescription="@string/mexphotos"/>
+
+        <TextView
+            android:id="@+id/camera_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:alpha="0.5"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="15dp"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:gravity="center"
+            tools:text="Front Hazard Avoidance Camera"/>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
