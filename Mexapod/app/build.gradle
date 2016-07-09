@@ -3,9 +3,16 @@ apply plugin: 'com.google.gms.google-services'
 
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'Mexakey'
+            keyPassword 'keypass'
+            storeFile file('config/mexapod.jks')
+            storePassword 'mexpass'
+        }
+    }
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
-
     defaultConfig {
         applicationId "com.rccorp.mexapod"
         minSdkVersion 19
@@ -21,6 +28,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
     }
 }
@@ -46,6 +54,4 @@ dependencies {
     compile 'com.github.bumptech.glide:glide:3.6.0'
     compile 'com.google.android.gms:play-services-analytics:9.0.0'
     compile 'com.google.firebase:firebase-ads:9.0.0'
-
-
 }
