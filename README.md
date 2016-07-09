@@ -12,5 +12,5 @@ Astonishing Mars Rover Photos and APOD(Astronomy Picture of the Day-Nasa) at you
 - APOD is one of the most popular websites at NASA In fact, this website is one of the most popular websites across all federal agencies.
 
 Note:-
-User needs to get a APIKEY from NASA to run the app.
-
+- User needs to get a APIKEY from NASA to run the app.
+- The apprelease apk is in the /app directory. 
